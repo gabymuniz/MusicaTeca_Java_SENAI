@@ -1,38 +1,76 @@
 async function pesquisaArtista() {
 
     const nomeArtista = document.getElementById("nomeArtista").value;
-    const url = `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(nomeArtista)}&fmt=json`;
-
-    const response = await fetch(url);
-    const dados = await response.json();
-     console.log(dados)
-
-    if (dados.artists.length > 0) {
-
-        const artista = dados.artists[0];
-
-        //localStorage.setItem("Nome Artista", JSON.stringify(dados.artists[0]));
-
-        const artistaSalvo = {
-
-            nome: artista.name,
-            país: artista.country,
-            tipo: artista.type,
-            tag: artista.tags,
-            area: artista.area.name,
-            aidadeOrigem: artista["begin-area"].name,
-            anoInicio: artista["life-span"].begin
-
-        };
-
-        localStorage.setItem("artista", JSON.stringify(artistaSalvo));
-        console.log(artistaSalvo);
-       // window.location.href = "../pages/apresentaDados.html";
+    if (nomeArtista == "") {
+        window.alert("Informe um nome válido! Não pode ser vazio!");
     } else {
-        alert("Artista/ banda não encontrado!!")
-    }
+        const url = `https://musicbrainz.org/ws/2/artist?query=${encodeURIComponent(nomeArtista)}&fmt=json`;
 
-    console.log("Pesquisa artista")
+        const response = await fetch(url);
+        const dados = await response.json();
+        //console.log(dados)
+
+        if (dados.artists.length > 0) {
+
+            const artista = dados.artists[0];
+
+            //localStorage.setItem("Nome Artista", JSON.stringify(dados.artists[0]));
+
+            const artistaSalvo = {
+
+                nome: artista.name,
+                pais: artista.country,
+                tipo: artista.type,
+                tag: artista.tags,
+                area: artista.area.name,
+                cidadeOrigem: artista["begin-area"].name,
+                anoInicio: artista["life-span"].begin
+
+            };
+
+            localStorage.setItem("artista", JSON.stringify(artistaSalvo));
+
+            console.log(artistaSalvo);
+            mostraArtista();
+            // window.location.href = "../pages/apresentaDados.html";
+        } else {
+            alert("Artista/ banda não encontrado!!")
+        }
+
+        // console.log("Pesquisa artista")
+    }
+}
+
+function mostraArtista() {
+
+    const artistaString = localStorage.getItem("artista");
+    // console.log(artistaString);
+    const artista = JSON.parse(artistaString);
+
+    const pNome = document.getElementById("nome");
+    pNome.textContent = `Nome: ${artista.nome}`;
+
+    const pPais = document.getElementById("pais");
+    pPais.textContent = `Pais: ${artista.pais}`;
+
+    const pTipo = document.getElementById("tipo");
+    pTipo.textContent = `Tipo: ${artista.tipo}`;
+
+    const pTag = document.getElementById("tag");
+
+    for (let i = 0; i < artista.tag.length && i < 5; i++) {
+        //console.log(artista.tag[i].name);    
+        pTag.textContent += `${artista.tag[i].name}, `;
+    }
+    const pArea = document.getElementById("area");
+    pArea.textContent = `Area: ${artista.area}`;
+
+    const pcidadeOrigem = document.getElementById("cidadeOrigem");
+    pcidadeOrigem.textContent = `Cidade de Origem: ${artista.cidadeOrigem}`;
+
+    const PanoInicio = document.getElementById("anoInicio");
+    PanoInicio.textContent = `Ano de Inicio: ${artista.anoInicio}`;
+    // console.log(artista);
 }
 
 function pesquisaMusica() {
