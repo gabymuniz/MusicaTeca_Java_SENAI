@@ -1,6 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Space+Grotesk:wght@300..700&display=swap");
 
+/* CORES */
+:root {
+  --inkBlack: #000814;
+  --prussianBlue: #001d3d;
+  --regalNavy: #003566;
+  --schoolBusYellow: #ffc300;
+  --gold: #ffd60a;
+}
 /*FONTES*/
 .space-grotesk {
   font-family: "Space Grotesk", sans-serif;
@@ -16,84 +24,131 @@
 }
 /*FIM FONTES*/
 
-
-.centralizar{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-
+.centralizar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
-h1{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: whitesmoke;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: medium 500;
-    font-style:normal;
-    font-size: 100px;
-    
+h1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: medium 500;
+  font-style: normal;
+  font-size: 100px;
+  text-shadow: 3px 5px 10px var(--inkBlack);
 }
 
-html,body{
-    background: #000814;
-    background: linear-gradient(90deg, rgba(0, 8, 20, 1) 0%, rgba(0, 53, 102, 1) 29%, rgba(255, 214, 10, 1) 100%);
-    height:100%;
+html,
+body {
+  background: var(--inkBlack);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 8, 20, 1) 0%,
+    rgba(0, 53, 102, 1) 29%,
+    var(--gold) 100%
+  );
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-#container{
-    margin:50px;
-    font-family:'Manrope', sans-serif;
-    color:whitesmoke;
-
+#containerMusicaTeca {
+  margin: 50px;
+  font-family: "Manrope", sans-serif;
+  color: whitesmoke;
 }
 
-input{
-    border-style:none;
-    border-radius: 50px;
-    margin-top: 10px;
-    height:50px;
-    padding-left: 16px;
-    font-size: 16px;
+.vidroInput,
+.vidroInput:focus {
+  height: 50px;
+  padding-left: 16px;
+  font-size: 16px;
+
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11px);
+  -webkit-backdrop-filter: blur(11px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
 }
 
-label{
-    margin-top: 10px;
+label {
+  margin-top: 10px;
 }
 
 .pesquisar {
-    background-color: #FFD60A;
-    width: 50px;
-    height: 50px;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  background-color: var(--gold);
+  width: 50px;
+  height: 50px;
+  border: none;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  display: flex;
+  place-items: center;
+  box-shadow: 3px 5px 10px var(--inkBlack);
 }
 
 .pesquisar:hover {
-    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25);
-    transform: translateY(2px);
+  box-shadow: 1px 2px 3px var(--inkBlack);
+  /* box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.25); */
 }
 
 .bi-search {
-    font-size: 20px;
-    color: #000;
+  font-size: 20px;
+  color: #000;
 }
 
-footer{
+footer {
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Manrope", sans-serif;
+  margin-top: auto;
+}
+
+.vidro {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.8px);
+  -webkit-backdrop-filter: blur(7.8px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+}
+
+.vidroCard {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.53);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.27);
+}
+
+.headerCor nav {
+  .nav-link,
+  .navbar-brand {
     color: whitesmoke;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family:'Manrope', sans-serif;
+  }
+}
+
+#exibirDados{
+    .btn-close{
+        color: white;
+        --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414'/%3e%3c/svg%3e")
+    }
+
 }
