@@ -5,7 +5,7 @@ async function pesquisaArtista() {
 
     const response = await fetch(url);
     const dados = await response.json();
-    // console.log(dados)
+     console.log(dados)
 
     if (dados.artists.length > 0) {
 
@@ -27,7 +27,7 @@ async function pesquisaArtista() {
 
         localStorage.setItem("artista", JSON.stringify(artistaSalvo));
         console.log(artistaSalvo);
-        window.location.href = "../pages/apresentaDados.html";
+       // window.location.href = "../pages/apresentaDados.html";
     } else {
         alert("Artista/ banda não encontrado!!")
     }
@@ -59,6 +59,46 @@ function pesquisaMusica() {
 Comentários
 encodeURI, pega a variavel, no caso nome, e passa ela como parametro para a api de forma segura
 de acordo com que mesmo que o nome tenha espaços, a url seja aceita.
+
+
+
+Para um MVP da MusicaTeca
+
+Se o objetivo é entregar uma primeira versão funcional, eu priorizaria os seguintes campos:
+
+✅ Nome do artista
+✅ País
+✅ Gêneros
+✅ Biografia curta
+✅ Álbuns
+✅ Músicas
+✅ Data de lançamento dos álbuns
+✅ Links para Spotify e YouTube (quando disponíveis)
+👤 Artista
+-----------------------------------
+Foto
+Nome
+País
+Ano de início
+Gêneros
+Biografia
+
+🎵 Músicas mais conhecidas
+• Música 1
+• Música 2
+• Música 3
+
+💿 Discografia
+• Álbum A (2024)
+• Álbum B (2022)
+
+🎤 Eventos
+• Festival X
+• Show Y
+
+🔗 Ouça em
+Spotify | YouTube | Deezer
+
 */
 
 /* console.log(artista.country);
