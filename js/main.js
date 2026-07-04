@@ -8,7 +8,7 @@ async function pesquisaArtista() {
 
         const response = await fetch(url);
         const dados = await response.json();
-        //console.log(dados)
+    console.log(dados)
 
         if (dados.artists.length > 0) {
 
@@ -78,7 +78,31 @@ function pesquisaMusica() {
 
 }
 
+function apagarDados(){
+    //localStorage.clear();
+}
 
+function salvarHistorico(artista) {
+
+   /* console.log("Função: " + nomeDaFuncao);
+    console.log("Primeiro número: " + num1);
+    console.log("Segundo número: " + num2);
+    console.log("Resultado: " + resultado);
+    console.log("--------------------------------");
+
+    let operacao = {
+        funcao: nomeDaFuncao,
+        numero1: num1,
+        numero2: num2,
+        resultado: resultado
+    };
+*/
+    let historicoLocal = JSON.parse(localStorage.getItem("historicoArtista")) || [];
+
+    historicoLocal.push(artista);
+
+    localStorage.setItem("historicoArtista", JSON.stringify(historicoLocal));
+}
 
 
 
