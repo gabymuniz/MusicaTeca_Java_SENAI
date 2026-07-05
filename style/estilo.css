@@ -46,13 +46,13 @@ h1 {
 }
 
 .titulo {
-    font-size: 6rem; /* Desktop */
+  font-size: 6rem; /* Desktop */
 }
 
 @media (max-width: 768px) {
-    .titulo {
-        font-size: 2.5rem; /* Mobile */
-    }
+  .titulo {
+    font-size: 2.5rem; /* Mobile */
+  }
 }
 
 html,
@@ -74,15 +74,14 @@ body {
   font-family: "Manrope", sans-serif;
   color: whitesmoke;
 }
-input{
+input {
   width: clamp(250px, 50vw, 600px);
   margin-left: 20px;
 }
 
-.pesquisar{
+.pesquisar {
   margin-right: 20px;
 }
-
 
 .vidroInput,
 .vidroInput:focus {
@@ -101,6 +100,7 @@ input{
 
 label {
   margin-top: 10px;
+  font-size: larger;
 }
 
 .pesquisar {
@@ -149,12 +149,15 @@ footer {
 
 .vidroCard {
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.53);
+  background: rgba(255, 255, 255, 0.09);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.27);
+  backdrop-filter: blur(7.9px);
+  -webkit-backdrop-filter: blur(7.9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color:whitesmoke;
+  text-shadow: 1px 1px 1px #000814;
+  font-size: larger;
 }
 
 .headerCor nav {
@@ -164,21 +167,19 @@ footer {
   }
 }
 
-#exibirDados{
-    .btn-close{
-        color: white;
-        --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414'/%3e%3c/svg%3e")
-    }
-
+#exibirDados {
+  .btn-close {
+    color: white;
+    --bs-btn-close-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M.293.293a1 1 0 0 1 1.414 0L8 6.586 14.293.293a1 1 0 1 1 1.414 1.414L9.414 8l6.293 6.293a1 1 0 0 1-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 0 1-1.414-1.414L6.586 8 .293 1.707a1 1 0 0 1 0-1.414'/%3e%3c/svg%3e");
+  }
 }
 
-.estiloFooter a{
+.estiloFooter a {
   color: whitesmoke;
   text-decoration: none;
-
 }
 
-.vidroFooter{
+.vidroFooter {
   height: 100px;
   padding-left: 16px;
   font-size: 16px;
@@ -193,6 +194,6 @@ footer {
   border: 1px solid rgba(255, 255, 255, 0.27);
 }
 
-.bi-github{
-  margin:2px;
+.bi-github {
+  margin: 2px;
 }

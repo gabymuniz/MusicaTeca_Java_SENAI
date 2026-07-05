@@ -30,8 +30,8 @@
     <main>
       <div id="containerMusicaTeca" class="container mx-auto">
         <h1 class="titulo">MusicaTeca</h1>
-
-        <form class="centralizar" action="">
+        <!-- ARTISTA -->
+        <form class="centralizar" onsubmit="pesquisaArtista(event)">
           <label for="" class="mb-3">Pesquise por artista:</label>
 
           <div class="input-group mb-3">
@@ -41,16 +41,15 @@
               id="nomeArtista"
             />
             <button
-              onclick="pesquisaArtista()"
-              data-bs-toggle="modal"
-              data-bs-target="#exibirDados"
               class="btn pesquisar rounded-circle ms-2"
-              type="button"
+              type="submit"
             >
               <i class="bi bi-search"></i>
             </button>
           </div>
-
+        </form>
+        <!-- MUSICA -->
+        <form class="centralizar" onsubmit="pesquisaMusica(event)">
           <label for="" class="mb-3">Pesquise por música:</label>
           <div class="input-group mb-3">
             <input
@@ -59,27 +58,16 @@
               id="nomeMusica"
             />
             <button
-              onclick="pesquisaMusica()"
-              data-bs-toggle="modal"
-              data-bs-target="#exibirDados"
               class="btn pesquisar rounded-circle ms-2"
-              type="button"
+              type="submit"
             >
               <i class="bi bi-search"></i>
             </button>
           </div>
         </form>
       </div>
-      <script src="js/main.js"></script>
     </main>
 
-  <!-- MODAL ARTISTA -->
-  <div class="modal" tabindex="-1" id="exibirDados">
-    <div class="modal-dialog">
-      <div class="modal-content vidro">
-        <div class="modal-header text-white">
-          <h5 class="modal-title">Exibir Dados</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" onclick="apagarDados()"></button>
     <footer class="vidroFooter rounded-0">
       <h5>Desenvolvedores:</h5>
       <div class="container text-center estiloFooter">
@@ -116,7 +104,7 @@
     </footer>
 
     <!-- MODAL ARTISTA -->
-    <div class="modal" tabindex="-1" id="exibirDados">
+    <div class="modal" tabindex="-1" id="exibirDadosArtista">
       <div class="modal-dialog">
         <div class="modal-content vidro">
           <div class="modal-header text-white">
@@ -130,7 +118,7 @@
 
           <div class="modal-body">
             <!-- CARD -->
-            <div class="card vidroCard" style="width: fit-content">
+            <div class="card vidroCard" style="width:100% ">
               <div class="card-body">
                 <h5 class="card-title">Artista</h5>
                 <p id="nome">Nome:</p>
@@ -140,9 +128,6 @@
                 <p id="area">Área:</p>
                 <p id="cidadeOrigem">Cidade de Origem:</p>
                 <p id="anoInicio">Ano de ínicio:</p>
-                <br />
-                <a href="#" class="card-link">Link Spotify</a>
-                <a href="#" class="card-link">Link Youtube</a>
               </div>
             </div>
             <!-- FIM CARD -->
@@ -153,7 +138,7 @@
     <!-- FIM MODAL -->
 
     <!-- MODAL MUSICA -->
-    <div class="modal" tabindex="-1" id="exibirDados">
+    <div class="modal" tabindex="-1" id="exibirDadosMusica">
       <div class="modal-dialog">
         <div class="modal-content vidro">
           <div class="modal-header text-white">
@@ -167,20 +152,15 @@
 
           <div class="modal-body">
             <!-- CARD -->
-            <div class="card vidroCard" style="width: fit-content">
+            <div class="card vidroCard" style="width:100%">
               <div class="card-body">
                 <h5 class="card-title">Música</h5>
                 <p id="artistaMusica">Artista/ Banda</p>
-                <p id="nome">Nome:</p>
-                <p id="pais">País:</p>
-                <p id="tipo">Tipo:</p>
-                <p id="tag">Tag:</p>
-                <p id="area">Área:</p>
-                <p id="cidadeOrigem">Cidade de Origem:</p>
-                <p id="anoInicio">Ano de ínicio:</p>
-                <br />
-                <a href="#" class="card-link">Link Spotify</a>
-                <a href="#" class="card-link">Link Youtube</a>
+                <p id="titulo">Título:</p>
+                <p id="album">Álbum:</p>
+                <p id="dataLancamento">Data Lançamento:</p>
+                <p id="duracao">Duração:</p>
+               
               </div>
             </div>
             <!-- FIM CARD -->
@@ -196,5 +176,8 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    
+    <script src="js/main.js"></script>
+    <script src="js/Musica.js"></script>
   </body>
 </html>
